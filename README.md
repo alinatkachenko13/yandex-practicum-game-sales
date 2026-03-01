@@ -1,6 +1,6 @@
 # 🎮 Video Game Sales Analysis
 
-> Exploratory analysis of historical game sales data for planning an advertising campaign for the online store «Streamchik»
+> End-to-end EDA and statistical analysis to plan a 2017 ad campaign for the online store “Streamchik”
 
 [![Python](https://img.shields.io/badge/Python-3.x-3776AB?logo=python&logoColor=white)](https://www.python.org/)
 [![Pandas](https://img.shields.io/badge/Pandas-Data%20Analysis-150458?logo=pandas&logoColor=white)](https://pandas.pydata.org/)
@@ -8,20 +8,28 @@
 
 ---
 
-## 📋 About the Project
+## ✨ Why this project stands out
 
-This project is a **full exploratory data analysis (EDA)** for an online game store planning an advertising campaign for 2017. Based on a dataset with sales history (~17K records), it covers:
-
-- **Data preparation** — cleaning, handling missing values, feature engineering
-- **Exploratory analysis** — visualizations, pattern discovery across platforms, genres, and regions
-- **Statistical analysis** — hypothesis testing with t-test (scipy)
-- **Business recommendations** — data-driven campaign plan for NA, EU, and JP
+- **Real business goal:** choose platforms/genres for a 2017 marketing strategy
+- **Full analytics pipeline:** data cleaning → EDA → hypothesis testing → recommendations
+- **Strong foundations for ML:** solid preprocessing, feature engineering, and statistical rigor
 
 ---
 
-## 🛠 Tech Stack
+## 📋 Project Overview
 
-| Category          | Technologies        |
+This project analyzes historical game sales (~17K records) to identify market patterns and inform budget allocation for North America (NA), Europe (EU), and Japan (JP). The notebook includes:
+
+- **Data preparation**: type conversion, missing values strategy, duplicates, total sales feature
+- **Exploratory analysis**: trends over time, platform lifecycle, genre distribution, regional preferences
+- **Statistical testing**: t-tests for key business hypotheses with α control
+- **Actionable insights**: platform/genre focus and campaign guidance by region
+
+---
+
+## 🧰 Tech Stack
+
+| Category          | Tools               |
 |-------------------|---------------------|
 | **Language**      | Python 3            |
 | **Data**          | pandas              |
@@ -33,13 +41,10 @@ This project is a **full exploratory data analysis (EDA)** for an online game st
 
 ## 🧠 Skills Demonstrated
 
-| Area                          | What was done                                                                                               |
-|-------------------------------|-------------------------------------------------------------------------------------------------------------|
-| **Data Preprocessing**        | Type conversion, handling missing values (median imputation by groups), duplicate removal, feature creation |
-| **Exploratory Data Analysis** | Distribution analysis, correlations, time series, segmentation by platforms and genres                      |
-| **Statistical Analysis**      | T-test for comparing samples, significance level α                                                          |
-| **Visualization**             | Boxplots, bar charts, scatter plots to communicate findings                                                 |
-| **Product Thinking**          | User profiles by region, business recommendations                                                           |
+- **Data preprocessing:** imputation by groups, type fixes, handling “tbd”, deduplication
+- **EDA & visualization:** distributions, correlations, time dynamics, segmentation
+- **Statistical inference:** hypothesis testing, significance levels, interpretation
+- **Business framing:** turning analysis into concrete, region-aware recommendations
 
 ---
 
@@ -51,22 +56,27 @@ This project is a **full exploratory data analysis (EDA)** for an online game st
 pip install -r requirements.txt
 ```
 
-### Data setup
+### Data availability
 
-Place `games.csv` in the `datasets/` directory or update the path in the notebook:
+The dataset used in this project is not included in the repository due to access restrictions. The notebook contains all analysis logic and results, but running it locally requires the original `games.csv`.
+
+If you have access to the dataset, place it in `datasets/` or update the path in the notebook:
 
 ```python
-# Default: data = pd.read_csv('/datasets/games.csv')
-# For local run: data = pd.read_csv('datasets/games.csv')
+# Default (Practicum environment)
+data = pd.read_csv('/datasets/games.csv')
+
+# Local run
+data = pd.read_csv('datasets/games.csv')
 ```
 
-### Run the analysis
+### Review the analysis
+
+You can open the notebook to review the full analysis, visualizations, and conclusions:
 
 ```bash
 jupyter notebook game_sales_analysis.ipynb
 ```
-
-Run all cells (Kernel → Restart & Run All).
 
 ---
 
@@ -84,16 +94,24 @@ yandex-practicum-game-sales/
 
 ---
 
-## 📊 Key Findings
+## 📊 Key Findings (from the analysis)
 
-- **Relevant data period:** 2006–2016 (platform lifecycle ~6 years)
+- **Relevant period:** 2006–2016 (platform lifecycle ~6 years)
 - **Promising platforms for 2017:** PS4, Xbox One, WiiU, PSV, 3DS
-- **Leading genres:** Action, Shooter, Role-Playing, Sports
-- **Score impact:** `critic_score` moderately correlates with sales; `user_score` — weakly
-- **Statistical hypotheses:** User score differences confirmed between platforms (XOne vs PC) and between genres (Action vs Sports)
+- **Top genres:** Action, Shooter, Role-Playing, Sports
+- **Score impact:** critic scores moderately correlate with sales; user scores correlate weakly
+- **Hypotheses:** user score differences confirmed between XOne vs PC and Action vs Sports
+
+---
+
+## 🔭 What I would do next (ML-focused)
+
+- Build a **forecasting model** for 2017 sales by platform/genre
+- Add **feature importance analysis** for sales drivers
+- Validate insights with **cross-validation** and **holdout years**
 
 ---
 
 ## 📬 Contact
 
-Happy to discuss the project and further development — reach out on [LinkedIn](https://linkedin.com) or by email.
+Let’s connect: [LinkedIn](https://linkedin.com/in/your-profile) • your.email@example.com
